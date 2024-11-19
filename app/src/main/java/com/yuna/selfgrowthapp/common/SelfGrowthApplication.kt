@@ -9,11 +9,7 @@ class SelfGrowthApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()
-        Log.d(TAG,"Application Launched")
-    }
-
-    companion object {
-        const val TAG = "SelfGrowthApplication"
+        AppLogger.d(message = "Application Launched")
     }
 
 }
