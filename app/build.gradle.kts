@@ -5,7 +5,7 @@ plugins {
 
 android {
     namespace = "com.yuna.selfgrowthapp"
-    compileSdk = 34
+    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.yuna.selfgrowthapp"
