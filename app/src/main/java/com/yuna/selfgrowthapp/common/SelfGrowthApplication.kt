@@ -1,4 +1,4 @@
-package com.yuna.selfgrowthapp
+package com.yuna.selfgrowthapp.common
 
 import android.app.Application
 import android.util.Log

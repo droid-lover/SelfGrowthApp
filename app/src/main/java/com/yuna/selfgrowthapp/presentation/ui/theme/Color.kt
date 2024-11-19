@@ -1,4 +1,4 @@
-package com.yuna.selfgrowthapp.ui.theme
+package com.yuna.selfgrowthapp.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
