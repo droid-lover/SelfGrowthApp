@@ -28,5 +28,5 @@ val frauncesFamily = FontFamily(
 val staraFamily = FontFamily(
     Font(R.font.stara_bold, FontWeight.Bold),
     Font(R.font.stara_semibold, FontWeight.SemiBold),
-    Font(R.font.stara_medium, FontWeight.Medium)
+    Font(R.font.stara_medium, FontWeight.Normal)
 )

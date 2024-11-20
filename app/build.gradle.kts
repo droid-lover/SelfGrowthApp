@@ -90,5 +90,6 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
     implementation(libs.gson)
 
-    implementation("androidx.palette:palette:1.0.0")
+    implementation (libs.compose.charts)
+
 }

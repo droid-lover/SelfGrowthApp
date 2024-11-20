@@ -25,12 +25,11 @@ import com.yuna.selfgrowthapp.presentation.theme.bgColor
 
 
 @Composable
-fun HighlightItem(text: String) {
+fun HighlightListItem(text: String) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
             .wrapContentHeight()
-            .padding(8.dp)
             .background(
                 bgColor,
                 RoundedCornerShape(8.dp)
@@ -60,5 +59,5 @@ fun HighlightItem(text: String) {
 @Preview
 @Composable
 fun HighlightItemPreview() {
-    HighlightItem(text = "item")
+    HighlightListItem(text = "item")
 }

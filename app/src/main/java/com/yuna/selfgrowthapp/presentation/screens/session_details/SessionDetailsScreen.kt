@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.yuna.selfgrowthapp.presentation.commoncomponents.HeadingTextComponent
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.ContinueSessionComponent
+import com.yuna.selfgrowthapp.presentation.screens.session_details.components.EmotionsSection
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.HighlightsSection
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.HorizontalButtonsSection
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.SessionDetailsBackground
@@ -29,6 +30,10 @@ fun SessionDetailsScreen(
     viewModel: SessionDetailsViewModel = hiltViewModel()
 ) {
     val sessionDetails = viewModel.state.value.sessionDetails
+    //for now we are considering first summary
+    val summary = sessionDetails?.pastSummaries?.get(0)
+
+
     Surface(
         modifier = Modifier.fillMaxSize()
     ) {
@@ -81,16 +86,24 @@ fun SessionDetailsScreen(
                     Spacer(Modifier.size(24.dp))
                 }
 
+                //Emotions section
+                item {
+                    summary?.also {
+                        EmotionsSection(it.emotions)
+                        Spacer(Modifier.size(24.dp))
+                    }
+                }
+
                 //Highlights section
                 item {
-                    sessionDetails?.pastSummaries?.get(0)?.also {
+                    summary?.also {
                         HighlightsSection(summary = it)
+                        Spacer(Modifier.size(24.dp))
                     }
                 }
 
                 //Continue Session Button
                 item {
-                    Spacer(Modifier.size(24.dp))
                     ContinueSessionComponent()
                     Spacer(Modifier.size(24.dp))
                 }
