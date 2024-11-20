@@ -9,7 +9,9 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.yuna.selfgrowthapp.R
 import com.yuna.selfgrowthapp.presentation.commoncomponents.CircularTextComponent
 import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextComponent
 import com.yuna.selfgrowthapp.presentation.theme.greenColor
@@ -40,7 +42,7 @@ fun MultipleColorTextComponent(
             modifier = Modifier
                 .size(32.dp)
                 .padding(2.dp),
-            textValue = "i",
+            textValue = stringResource(R.string.i),
             textColor = greenColor,
             backgroundColor = greenTextColor
         )

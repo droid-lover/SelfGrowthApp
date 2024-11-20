@@ -26,7 +26,6 @@ fun HorizontalButtonsSection(firstButtonTitle: String, secondButtonTitle: String
             icon = R.drawable.ic_past_summaries,
             iconTintColor = Color.White,
             backgroundColor = Color.Transparent,
-            outlineColor = Color.White,
             textColor = Color.White
         )
 
@@ -40,7 +39,6 @@ fun HorizontalButtonsSection(firstButtonTitle: String, secondButtonTitle: String
             icon = R.drawable.ic_continue_session,
             iconTintColor = Color.Black,
             backgroundColor = Color.White,
-            outlineColor = Color.White,
             textColor = Color.Black
         )
     }

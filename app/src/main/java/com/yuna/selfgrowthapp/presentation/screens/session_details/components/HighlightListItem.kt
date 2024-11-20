@@ -17,6 +17,8 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.yuna.selfgrowthapp.R
@@ -39,7 +41,7 @@ fun HighlightListItem(text: String) {
     ) {
         Image(
             painter = painterResource(id = R.drawable.ic_quote_icon),
-            contentDescription = "Quote Image",
+            contentDescription = stringResource(R.string.quote_image),
             modifier = Modifier
                 .wrapContentSize()
                 .defaultMinSize(minHeight = 40.dp)
@@ -50,7 +52,8 @@ fun HighlightListItem(text: String) {
         Spacer(modifier = Modifier.height(8.dp))
 
         NormalTextComponent(
-            textValue = text
+            textValue = text,
+            fontWeight = FontWeight.SemiBold
         )
     }
 
@@ -59,5 +62,5 @@ fun HighlightListItem(text: String) {
 @Preview
 @Composable
 fun HighlightItemPreview() {
-    HighlightListItem(text = "item")
+    HighlightListItem(text = stringResource(R.string.item))
 }

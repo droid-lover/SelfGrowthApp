@@ -22,13 +22,16 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.yuna.selfgrowthapp.R
 import com.yuna.selfgrowthapp.presentation.theme.frauncesFamily
 import com.yuna.selfgrowthapp.presentation.theme.normalTextColor
 import com.yuna.selfgrowthapp.presentation.theme.staraFamily
@@ -83,14 +86,13 @@ fun ButtonComponent(
     modifier: Modifier = Modifier,
     value: String,
     backgroundColor: Color = Color.Transparent,
-    outlineColor: Color = Color.Transparent,
     onButtonClicked: () -> Unit,
     isEnabled: Boolean = false,
     textSize: TextUnit = 18.sp,
     icon: Int? = null,
     iconTintColor: Color = Color.White,
     textColor: Color,
-    padding: PaddingValues? = null
+    padding: PaddingValues? = null,
 ) {
     val buttonModifier = modifier
         .heightIn(42.dp)
@@ -123,7 +125,7 @@ fun ButtonComponent(
                 icon?.let { painterResource(id = it) }?.let {
                     Icon(
                         painter = it,
-                        contentDescription = "Drawable description",
+                        contentDescription = stringResource(R.string.drawable_description),
                         modifier = Modifier.size(16.dp),
                         tint = iconTintColor
                     )
@@ -174,13 +176,14 @@ fun CircularTextComponent(
 fun NormalTextComponent(
     textSize: TextUnit = 14.sp,
     textValue: String,
-    textColor: Color = normalTextColor
+    textColor: Color = normalTextColor,
+    fontWeight: FontWeight = FontWeight.Normal
 ) {
     Text(
         text = textValue,
         fontSize = textSize,
         color = textColor,
-        fontWeight = FontWeight.Normal,
+        fontWeight = fontWeight,
         fontFamily = staraFamily
     )
 }

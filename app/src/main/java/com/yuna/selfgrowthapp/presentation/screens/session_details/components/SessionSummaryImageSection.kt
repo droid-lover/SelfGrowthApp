@@ -19,15 +19,17 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yuna.selfgrowthapp.R
+import com.yuna.selfgrowthapp.data.local.dto.PastSummary
 import com.yuna.selfgrowthapp.presentation.commoncomponents.ButtonComponent
 import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextComponent
 
 @Composable
-fun SessionSummaryImageSection() {
+fun SessionSummaryImageSection(summary: PastSummary?) {
     Box(
         modifier = Modifier.size(width = 361.dp, height = 320.dp)
     ) {
@@ -49,8 +51,7 @@ fun SessionSummaryImageSection() {
 
             SubHeadingTextComponent(
                 modifier = Modifier.wrapContentSize(),
-                textValue = "Keep shining; you're\n" +
-                        "making remarkable\n progress!",
+                textValue = summary?.quote?:"",
                 textColor = Color.White
             )
 
@@ -60,13 +61,12 @@ fun SessionSummaryImageSection() {
                 modifier = Modifier
                     .wrapContentWidth()
                     .defaultMinSize(minWidth = 97.dp),
-                value = "Share",
+                value = stringResource(R.string.share),
                 onButtonClicked = {},
                 textSize = 12.sp,
                 icon = R.drawable.ic_share,
                 iconTintColor = Color.White,
                 backgroundColor = Color.Transparent,
-                outlineColor = Color.White,
                 textColor = Color.White
             )
         }
@@ -77,5 +77,5 @@ fun SessionSummaryImageSection() {
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
 fun SessionSummaryImageSectionPreview() {
-    SessionSummaryImageSection()
+//    SessionSummaryImageSection()
 }

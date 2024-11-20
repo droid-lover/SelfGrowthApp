@@ -82,7 +82,7 @@ fun SessionDetailsScreen(
 
                 // Session Summary Image with title
                 item {
-                    SessionSummaryImageSection()
+                    SessionSummaryImageSection(summary)
                     Spacer(Modifier.size(24.dp))
                 }
 

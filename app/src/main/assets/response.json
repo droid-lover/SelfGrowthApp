@@ -8,7 +8,7 @@
       {
         "id": "unique-summary-id-1",
         "createdAt": "2024-11-18T12:15:00Z",
-        "quote": "Keep shining; you're making remarkable progress.",
+        "quote": "Keep shining; you're\nmaking remarkable\nprogress!",
         "emotions": [
           {
             "name": "Joy",

@@ -12,8 +12,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.yuna.selfgrowthapp.R
 import com.yuna.selfgrowthapp.data.local.dto.Emotion
 import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextComponent
 import com.yuna.selfgrowthapp.presentation.theme.greenColor
@@ -32,14 +34,14 @@ fun EmotionsSection(emotions: List<Emotion>) {
         Spacer(Modifier.size(18.dp))
 
         MultipleColorTextComponent(
-            firstText = "Your Main ",
+            firstText = stringResource(R.string.your_main),
             firstTextColor = Color.Black,
-            secondText = "Emotions ",
+            secondText = stringResource(R.string.emotions),
             secondTextColor = greenColor
         )
 
         SubHeadingTextComponent(
-            textValue = "During this Session",
+            textValue = stringResource(R.string.during_this_session),
             textColor = Color.Black
         )
 

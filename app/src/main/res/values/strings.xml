@@ -1,3 +1,19 @@
 <resources>
     <string name="app_name">SelfGrowthApp</string>
+    <string name="share">Share</string>
+    <string name="item">item</string>
+    <string name="quote_image">Quote Image</string>
+    <string name="continue_session">CONTINUE SESSION</string>
+    <string name="during_this_session">During this Session</string>
+    <string name="your_main">"Your Main "</string>
+    <string name="emotions">"Emotions "</string>
+    <string name="let_s_take_a_closer_look_at_your_change_talk_from_our_conversation">Let’s take a closer look at your change\ntalk from our conversation:</string>
+    <string name="your">"Your "</string>
+    <string name="highlights">"Highlights "</string>
+    <string name="during_the_session">During the Session</string>
+    <string name="i">i</string>
+    <string name="back">Back</string>
+    <string name="button_1">Button 1</string>
+    <string name="button_2">Button 2</string>
+    <string name="drawable_description">Drawable description</string>
 </resources>

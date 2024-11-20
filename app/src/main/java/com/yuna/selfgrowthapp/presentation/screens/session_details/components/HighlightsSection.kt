@@ -13,8 +13,10 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.yuna.selfgrowthapp.R
 import com.yuna.selfgrowthapp.data.local.dto.PastSummary
 import com.yuna.selfgrowthapp.presentation.commoncomponents.NormalTextComponent
 import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextComponent
@@ -37,22 +39,22 @@ fun HighlightsSection(
         Spacer(Modifier.size(18.dp))
 
         MultipleColorTextComponent(
-            firstText = "Your ",
+            firstText = stringResource(R.string.your),
             firstTextColor = Color.Black,
-            secondText = "Highlights ",
+            secondText = stringResource(R.string.highlights),
             secondTextColor = greenColor
         )
 
 
         SubHeadingTextComponent(
-            textValue = "During the Session",
+            textValue = stringResource(R.string.during_the_session),
             textColor = Color.Black
         )
 
         Spacer(Modifier.size(18.dp))
 
         NormalTextComponent(
-            textValue = "Let’s take a closer look at your change\ntalk from our conversation:",
+            textValue = stringResource(R.string.let_s_take_a_closer_look_at_your_change_talk_from_our_conversation),
             textColor = normalTextColor70
         )
 
