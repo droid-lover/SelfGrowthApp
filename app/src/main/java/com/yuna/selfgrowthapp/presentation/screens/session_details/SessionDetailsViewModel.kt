@@ -12,7 +12,7 @@ import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
 
 @HiltViewModel
-class SessionDetailsViewModel @Inject constructor(
+open class SessionDetailsViewModel @Inject constructor(
     private val sessionDetailsUseCase: GetSessionDetailsUseCase
 ) : ViewModel() {
 
