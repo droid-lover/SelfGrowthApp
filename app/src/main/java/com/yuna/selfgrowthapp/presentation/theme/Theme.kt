@@ -1,4 +1,4 @@
-package com.yuna.selfgrowthapp.presentation.ui.theme
+package com.yuna.selfgrowthapp.presentation.theme
 
 import android.os.Build
 import androidx.compose.foundation.isSystemInDarkTheme
