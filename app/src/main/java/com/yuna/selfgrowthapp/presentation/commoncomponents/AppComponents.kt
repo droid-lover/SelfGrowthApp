@@ -12,9 +12,9 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.wrapContentHeight
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -23,7 +23,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
@@ -31,6 +30,7 @@ import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yuna.selfgrowthapp.presentation.theme.frauncesFamily
+import com.yuna.selfgrowthapp.presentation.theme.normalTextColor
 import com.yuna.selfgrowthapp.presentation.theme.staraFamily
 
 @Composable
@@ -59,22 +59,21 @@ fun HeadingTextComponent(
 }
 
 @Composable
-fun NormalTextComponent(
+fun SubHeadingTextComponent(
     modifier: Modifier = Modifier,
-    textValue: String, textColor: Color = Color.Black
+    textValue: String, textColor: Color = Color.Black,
 ) {
     Text(
         text = textValue,
         modifier = modifier
-            .fillMaxWidth()
-            .heightIn(min = 40.dp),
+            .heightIn(min = 32.dp),
         style = TextStyle(
             fontSize = 24.sp,
             fontFamily = frauncesFamily,
             fontWeight = FontWeight.SemiBold,
         ),
         color = textColor,
-        textAlign = TextAlign.Center
+        textAlign = TextAlign.Center,
     )
 }
 
@@ -139,4 +138,46 @@ fun ButtonComponent(
             }
         }
     }
+}
+
+
+@Composable
+fun CircularTextComponent(
+    modifier: Modifier = Modifier,
+    textValue: String, textColor: Color = Color.Black,
+    backgroundColor: Color = Color.Green
+) {
+    Box(
+        modifier = modifier
+            .heightIn(min = 40.dp)
+            .background(backgroundColor, CircleShape)
+    ) {
+        Text(
+            text = textValue,
+            modifier = modifier
+                .heightIn(min = 40.dp),
+            style = TextStyle(
+                fontSize = 18.sp,
+                fontFamily = frauncesFamily,
+                fontWeight = FontWeight.SemiBold,
+            ),
+            color = textColor,
+            textAlign = TextAlign.Center
+        )
+    }
+}
+
+@Composable
+fun NormalTextComponent(
+    textSize: TextUnit = 14.sp,
+    textValue: String,
+    textColor: Color = normalTextColor
+) {
+    Text(
+        text = textValue,
+        fontSize = textSize,
+        color = textColor,
+        fontWeight = FontWeight.Normal,
+        fontFamily = staraFamily
+    )
 }

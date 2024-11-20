@@ -24,7 +24,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.yuna.selfgrowthapp.R
 import com.yuna.selfgrowthapp.presentation.commoncomponents.ButtonComponent
-import com.yuna.selfgrowthapp.presentation.commoncomponents.NormalTextComponent
+import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextComponent
 
 @Composable
 fun SessionSummaryImageSection() {
@@ -47,7 +47,7 @@ fun SessionSummaryImageSection() {
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
 
-            NormalTextComponent(
+            SubHeadingTextComponent(
                 modifier = Modifier.wrapContentSize(),
                 textValue = "Keep shining; you're\n" +
                         "making remarkable\n progress!",
