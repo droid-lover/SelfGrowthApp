@@ -87,9 +87,10 @@ fun ButtonComponent(
     onButtonClicked: () -> Unit,
     isEnabled: Boolean = false,
     textSize: TextUnit = 18.sp,
-    icon: Int,
+    icon: Int? = null,
     iconTintColor: Color = Color.White,
-    textColor: Color
+    textColor: Color,
+    padding: PaddingValues? = null
 ) {
     val buttonModifier = modifier
         .heightIn(42.dp)
@@ -100,7 +101,6 @@ fun ButtonComponent(
                 Modifier
             }
         )
-
     Button(
         modifier = buttonModifier,
         onClick = {
@@ -108,7 +108,7 @@ fun ButtonComponent(
         },
         contentPadding = PaddingValues(),
         shape = RoundedCornerShape(40.dp),
-        enabled = isEnabled
+        enabled = isEnabled,
     ) {
         Box(
             modifier = modifier
@@ -120,14 +120,17 @@ fun ButtonComponent(
             contentAlignment = Alignment.Center
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) { // Add Row
-                Icon(
-                    painter = painterResource(id = icon),
-                    contentDescription = "Drawable description",
-                    modifier = Modifier.size(16.dp),
-                    tint = iconTintColor
-                )
-                Spacer(modifier = Modifier.width(8.dp))
+                icon?.let { painterResource(id = it) }?.let {
+                    Icon(
+                        painter = it,
+                        contentDescription = "Drawable description",
+                        modifier = Modifier.size(16.dp),
+                        tint = iconTintColor
+                    )
+                    Spacer(modifier = Modifier.width(8.dp))
+                }
                 Text(
+                    modifier = Modifier.padding(padding ?: PaddingValues(0.dp)),
                     text = value,
                     fontSize = textSize,
                     color = textColor,

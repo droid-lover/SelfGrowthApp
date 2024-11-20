@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import com.yuna.selfgrowthapp.presentation.commoncomponents.HeadingTextComponent
+import com.yuna.selfgrowthapp.presentation.screens.session_details.components.ContinueSessionComponent
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.HighlightsSection
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.HorizontalButtonsSection
 import com.yuna.selfgrowthapp.presentation.screens.session_details.components.SessionDetailsBackground
@@ -85,6 +86,13 @@ fun SessionDetailsScreen(
                     sessionDetails?.pastSummaries?.get(0)?.also {
                         HighlightsSection(summary = it)
                     }
+                }
+
+                //Continue Session Button
+                item {
+                    Spacer(Modifier.size(24.dp))
+                    ContinueSessionComponent()
+                    Spacer(Modifier.size(24.dp))
                 }
 
             }
