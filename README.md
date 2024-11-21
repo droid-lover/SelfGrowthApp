@@ -24,4 +24,23 @@ SelfGrowthApp is early version of Yuna Project.
 ## Best Regards
 ### Sachin
 
+## Instruction to run this Project:
+* Clone the Repository: <br/>
+     git clone https://github.com/droid-lover/SelfGrowthApp.git
+  
+* Open Project in Android Studio: <br/>
+
+* Build the Project:<br/>
+     Android Studio will automatically sync and build the project.<br/>
+     If there are any errors, resolve them before proceeding.<br/>
+     
+* Run the App:<br/>
+     Connect an Android device or start an emulator.<br/>
+     Click the "Run" button (green triangle icon) in the toolbar.<br/>
+     Select your device or emulator from the list.<br/>
+     The app will be installed and launched on the selected device.<br/>
+
+  
+
+
 
