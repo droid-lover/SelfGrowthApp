@@ -8,6 +8,8 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.wrapContentSize
 import androidx.compose.foundation.layout.wrapContentWidth
@@ -30,49 +32,53 @@ import com.yuna.selfgrowthapp.presentation.commoncomponents.SubHeadingTextCompon
 
 @Composable
 fun SessionSummaryImageSection(summary: PastSummary?) {
-    Box(
-        modifier = Modifier.size(width = 361.dp, height = 320.dp)
-    ) {
-        Image(
-            modifier = Modifier
-                .fillMaxSize()
-                .clip(RoundedCornerShape(24.dp))
-                .border(4.dp, Color.White, RoundedCornerShape(24.dp)),
-            painter = painterResource(id = R.drawable.ic_session_image),
-            contentDescription = "Image description",
-            contentScale = ContentScale.Crop
-        )
 
-        Column(
-            modifier = Modifier.fillMaxSize(),
-            verticalArrangement = Arrangement.Center,
-            horizontalAlignment = Alignment.CenterHorizontally
+        Box(
+            modifier = Modifier.fillMaxWidth().height( height = 320.dp),
+            contentAlignment = Alignment.Center
         ) {
-
-            SubHeadingTextComponent(
-                modifier = Modifier.wrapContentSize(),
-                textValue = summary?.quote?:"",
-                textColor = Color.White
-            )
-
-            Spacer(modifier = Modifier.size(18.dp))
-
-            ButtonComponent(
+            Image(
                 modifier = Modifier
-                    .wrapContentWidth()
-                    .defaultMinSize(minWidth = 97.dp),
-                value = stringResource(R.string.share),
-                onButtonClicked = {},
-                textSize = 12.sp,
-                icon = R.drawable.ic_share,
-                iconTintColor = Color.White,
-                backgroundColor = Color.Transparent,
-                textColor = Color.White
-            )
-        }
+                    .fillMaxSize()
+                    .fillMaxWidth()
 
+                    .clip(RoundedCornerShape(24.dp))
+                    .border(4.dp, Color.White, RoundedCornerShape(24.dp)),
+                painter = painterResource(id = R.drawable.ic_session_image),
+                contentDescription = "Image description",
+                contentScale = ContentScale.Crop
+            )
+
+            Column(
+                modifier = Modifier.fillMaxSize(),
+                verticalArrangement = Arrangement.Center,
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+
+                SubHeadingTextComponent(
+                    modifier = Modifier.wrapContentSize(),
+                    textValue = summary?.quote ?: "",
+                    textColor = Color.White
+                )
+
+                Spacer(modifier = Modifier.size(18.dp))
+
+                ButtonComponent(
+                    modifier = Modifier
+                        .wrapContentWidth()
+                        .defaultMinSize(minWidth = 97.dp),
+                    value = stringResource(R.string.share),
+                    onButtonClicked = {},
+                    textSize = 12.sp,
+                    icon = R.drawable.ic_share,
+                    iconTintColor = Color.White,
+                    backgroundColor = Color.Transparent,
+                    textColor = Color.White
+                )
+            }
+
+        }
     }
-}
 
 @Preview(showBackground = true, showSystemUi = true)
 @Composable
