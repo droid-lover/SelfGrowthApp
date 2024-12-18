@@ -1,26 +1,19 @@
 plugins {
-    alias(libs.plugins.android.application)
+    alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.hilt.android)
     kotlin("kapt")
-    id("kotlin-parcelize")
 }
 
 android {
-    namespace = "com.yuna.selfgrowthapp"
+    namespace = "com.nmb.feature1"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.yuna.selfgrowthapp"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        vectorDrawables {
-            useSupportLibrary = true
-        }
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildFeatures {
@@ -55,15 +48,12 @@ android {
     composeOptions {
         kotlinCompilerExtensionVersion = "1.5.1"
     }
-    packaging {
-        resources {
-            excludes += "/META-INF/{AL2.0,LGPL2.1}"
-        }
-    }
+
 }
 
 dependencies {
-    implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
+    implementation(project(":utilities"))
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.ktx)
@@ -92,9 +82,4 @@ dependencies {
     implementation(libs.gson)
 
     implementation (libs.compose.charts)
-
-    implementation(project(":feature1"))
-    implementation(project(":utilities"))
-    implementation(project(":practice"))
-
 }

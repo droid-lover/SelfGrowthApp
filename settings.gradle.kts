@@ -21,3 +21,6 @@ dependencyResolutionManagement {
 
 rootProject.name = "SelfGrowthApp"
 include(":app")
+include(":feature1")
+include(":utilities")
+include(":practice")
